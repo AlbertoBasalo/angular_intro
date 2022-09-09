@@ -2,11 +2,13 @@
 
 A sample project for an introductory course to Angular
 
-> Developing **Astro Bookings** a booking web app for a fictitious space travel company
+> Developing **Astro Bookings** a web app for a fictitious space travel company.
 
-- Follow the numbered branches of this repository.
+- 🛣️ Follow the numbered branches of this repository.
 
-- Execute `npm i` and `npm start` to run the app.
+- 🚀 Execute `npm i` and `npm start` to run the app.
+
+- 📕 Read the `docs` folder content.
 
 ---
 
