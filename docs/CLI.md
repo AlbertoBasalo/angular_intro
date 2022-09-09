@@ -17,5 +17,7 @@ npm start
 
 # Add a bit of style
 npm install @picocss/pico
+# angular.json : "./node_modules/@picocss/pico/css/pico.fluid.classless.min.css",
+
 
 ```
