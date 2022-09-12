@@ -13,12 +13,8 @@ import { data } from "./data";
         <ul>
           <li *ngFor="let agency of agencies">
             <span [ngClass]="agency.status | lowercase">{{ agency.name }}</span>
-            <!-- <span *ngIf="agency.range==='Interplanetary'"> 🪐 </span>-->
-            <!-- <span *ngIf="agency.range === 'Orbital'">🌍</span>-->
-            <span *ngIf="agency.range === 'Interplanetary'; else orbitalIcon">
-              🪐
-            </span>
-            <ng-template #orbitalIcon><span>🌍</span></ng-template>
+            <span *ngIf="agency.range === 'Interplanetary'">🪐</span>
+            <span *ngIf="agency.range === 'Orbital'">🌍</span>
           </li>
         </ul>
       </article>
@@ -49,38 +45,52 @@ import { data } from "./data";
     </main>
     <footer>
       <h6>{{ title }}</h6>
-      <p>
-        <i>{{ subtitle | lowercase }}</i>
-      </p>
+      <p [style]="subtitleStyle">{{ subtitle | lowercase }}</p>
       <a [href]="authorUrl">{{ author }}</a>
     </footer>
   `,
-  styles: [],
+  styles: [
+    `
+      .active {
+        font-style: normal;
+        font-weight: bold;
+      }
+      .pending {
+        font-style: italic;
+      }
+      .green {
+        color: green;
+      }
+      .orange {
+        color: orange;
+      }
+      .sold-out {
+        color: red;
+      }
+      .few-places {
+        color: orange;
+      }
+    `,
+  ],
 })
 export class AppComponent {
   title = "Astro Bookings";
   subtitle = "Welcome on board";
+  author = "Alberto Basalo";
+  authorUrl = "https://twitter.com/albertobasalo";
+  subtitleStyle = "font-style: italic";
   agencies = data.agencies;
   trips = data.trips;
   isReloading = false;
-  author = "Alberto Basalo";
-  authorUrl = "https://twitter.com/albertobasalo";
 
-  getTripsCounter() {
-    return this.trips.length;
-  }
-  reload(): void {
-    this.isReloading = true;
-    console.log("♻️ Reloading...");
-  }
+  getTripsCounter = () => this.trips.length;
+
+  reload = () => (this.isReloading = true);
+
   getClassForStatus(status: string): string {
-    if (status === "Confirmed") {
-      return "green";
-    } else {
-      return "orange";
-    }
+    return status === "Confirmed" ? "green" : "orange";
   }
-  getClassForPlaces(places: number) {
+  getClassForPlaces(places: number): string {
     if (places === 0) return "sold-out";
     if (places < 8) return "few-places";
     return "";
