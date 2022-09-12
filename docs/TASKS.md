@@ -22,3 +22,5 @@
 - [x] Show trip details
 - [x] Confirmed trips in green, waiting trips in orange
 - [x] Show an icon to indicate the trip kind
+
+## 2. Modules

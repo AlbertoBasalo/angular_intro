@@ -9,7 +9,7 @@ npm i @angular/cli
 # Generate a new minimal application
 ng new angular-intro --minimal=true --routing=true --style=css
 
-# Alternatively, you can skip global installation by running
+# 🧙🏼‍♂️ Alternatively, you can skip global installation by running
 npx @angular/cli new angular-intro --minimal=true --routing=true --style=css
 
 # run
@@ -48,11 +48,10 @@ ng g m shared
 # Generate an exported component
 ng g c shared/reloading --export
 
-# Alternatively Generate a Core module
+# 🧙🏼‍♂️ Alternatively Generate a Core module
 ng g m core
 ## Move header and footer to core module
 
-# Improvement: Generate a Page component for Home
+# 🦸🏼 Improvement: Generate a Page component for Home
 ng g c home/home --export --type=page
-## Move header and footer to core module
 ```
