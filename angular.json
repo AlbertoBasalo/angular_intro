@@ -9,6 +9,7 @@
         "@schematics/angular:component": {
           "inlineTemplate": true,
           "inlineStyle": true,
+          "flat": true,
           "skipTests": true
         },
         "@schematics/angular:class": {
