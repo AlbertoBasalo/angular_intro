@@ -10,7 +10,8 @@
           "inlineTemplate": true,
           "inlineStyle": true,
           "flat": true,
-          "skipTests": true
+          "skipTests": true,
+          "type": "Page"
         },
         "@schematics/angular:class": {
           "skipTests": true

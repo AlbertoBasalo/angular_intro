@@ -12,6 +12,7 @@ import { Component } from "@angular/core";
         </section>
         <ul>
           <li><a routerLink="/about">ℹ️ About us</a></li>
+          <li><a routerLink="/contact">📧 Contact</a></li>
         </ul>
       </nav>
     </footer>

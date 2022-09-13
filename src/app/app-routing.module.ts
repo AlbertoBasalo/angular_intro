@@ -12,6 +12,7 @@ const routes: Routes = [
     path: "about",
     component: AboutPage,
   },
+  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
   {
     path: "**",
     redirectTo: "",
