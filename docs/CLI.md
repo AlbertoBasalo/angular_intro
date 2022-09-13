@@ -55,3 +55,20 @@ ng g m core
 # 🦸🏼 Improvement: Generate a Page component for Home
 ng g c home/home --export --type=page
 ```
+
+# 3. Router
+
+```bash
+# Generate a new module
+ng g m about
+# Generate a new component
+ng g c about
+
+# Generate a new route
+ng g m auth/register --route=auth/register --module=app
+ng g m auth/login --route=auth/login --module=app
+ng g m contact --route=contact --module=app
+
+ng g m agencies --route=agencies --module=app
+ng g m agencies/agenciesNew --route=new --module=agencies
+```
