@@ -10,8 +10,8 @@ import { Component } from "@angular/core";
         </ul>
         <ul>
           <li><a routerLink="">➡️ Agencies</a></li>
-          <li><a routerLink="">🔏 Register</a></li>
-          <li><a routerLink="">🔐 Login</a></li>
+          <li><a routerLink="/auth/register">🔏 Register</a></li>
+          <li><a routerLink="/auth/login">🔐 Login</a></li>
         </ul>
       </nav>
     </header>
