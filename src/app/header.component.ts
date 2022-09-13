@@ -4,10 +4,29 @@ import { Component } from "@angular/core";
   selector: "app-header",
   template: `
     <header>
-      <h1>{{ title | uppercase }}</h1>
+      <nav>
+        <ul>
+          <a routerLink="/" class="title">🚀 {{ title | uppercase }}</a>
+        </ul>
+        <ul>
+          <li><a routerLink="">➡️ Agencies</a></li>
+          <li><a routerLink="">🔏 Register</a></li>
+          <li><a routerLink="">🔐 Login</a></li>
+        </ul>
+      </nav>
     </header>
   `,
-  styles: [],
+  styles: [
+    `
+      a {
+        text-decoration: underline;
+        margin-left: 0.4rem;
+      }
+      .title {
+        font-weight: bold;
+      }
+    `,
+  ],
 })
 export class HeaderComponent {
   title = "Astro Bookings";

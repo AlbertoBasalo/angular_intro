@@ -4,9 +4,16 @@ import { Component } from "@angular/core";
   selector: "app-footer",
   template: `
     <footer>
-      <h6>{{ title }}</h6>
-      <p [style]="subtitleStyle">{{ subtitle | lowercase }}</p>
-      <a [href]="authorUrl">{{ author }}</a>
+      <nav>
+        <section>
+          <h6>{{ title }}</h6>
+          <p [style]="subtitleStyle">{{ subtitle | lowercase }}</p>
+          <a [href]="authorUrl">{{ author }}</a>
+        </section>
+        <ul>
+          <li><a routerLink="/about">ℹ️ About us</a></li>
+        </ul>
+      </nav>
     </footer>
   `,
   styles: [],
