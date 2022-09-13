@@ -38,7 +38,7 @@ ng g m home
 
 # Generate new component home
 # (needs to be exported in the module Home)
-ng g c home/home
+ng g c home
 ng g c home/agencies
 ng g c home/trips
 
