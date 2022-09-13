@@ -24,3 +24,11 @@
 - [x] Show an icon to indicate the trip kind
 
 ## 2. Components
+
+- [x] Move the header node to a new component
+- [x] Move the footer node to a new component
+- [x] Create a Home module
+- [x] Move the main node to the Home component
+- [x] Create components for agencies and trips
+- [x] Create a Shared module
+- [x] Move the reloading content to a component on the Shared module
