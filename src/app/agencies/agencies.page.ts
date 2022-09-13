@@ -1,20 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { data } from "../data.repository";
 @Component({
-  selector: 'app-agencies',
+  selector: "app-agencies",
   template: `
-    <p>
-      agencies works!
-    </p>
+    <article>
+      <button (click)="onNewClick()">➕ Add new Agency</button>
+      <ul>
+        <li *ngFor="let agency of agencies">
+          <a [routerLink]="agency.id">{{ agency.name }}</a>
+        </li>
+      </ul>
+    </article>
   `,
-  styles: [
-  ]
+  styles: [],
 })
-export class AgenciesPage implements OnInit {
+export class AgenciesPage {
+  agencies = data.agencies;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
-
+  onNewClick = () => this.router.navigate(["agencies", "new"]);
 }
