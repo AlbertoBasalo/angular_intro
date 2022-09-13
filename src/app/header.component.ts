@@ -9,7 +9,7 @@ import { Component } from "@angular/core";
           <a routerLink="/" class="title">🚀 {{ title | uppercase }}</a>
         </ul>
         <ul>
-          <li><a routerLink="">➡️ Agencies</a></li>
+          <li><a routerLink="/agencies">➡️ Agencies</a></li>
           <li><a routerLink="/auth/register">🔏 Register</a></li>
           <li><a routerLink="/auth/login">🔐 Login</a></li>
         </ul>
