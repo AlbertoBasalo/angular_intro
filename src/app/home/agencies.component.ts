@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { data } from "../data";
+import { data } from "../data.repository";
 
 @Component({
   selector: "app-agencies",
