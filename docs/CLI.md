@@ -73,3 +73,5 @@ ng g m auth/login --route=auth/login --module=app
 ng g m agencies --route=agencies --module=app
 ng g m agencies/agenciesNew --route=new --module=agencies
 ```
+
+## 4. Forms
