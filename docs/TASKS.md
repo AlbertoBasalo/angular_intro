@@ -48,3 +48,9 @@
 
 - [x] Create a form for the contact page
 - [x] Validate and give feedback to the user
+
+## 5. Services
+
+- [x] Create a helper service
+- [x] Get Id form a route
+- [x] Get the error message form a control

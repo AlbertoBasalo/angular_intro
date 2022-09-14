@@ -80,3 +80,19 @@ ng g m agencies/agencies-view --route=:id --module=agencies
 ```
 
 ## 4. Forms
+
+## 5. Services
+
+```bash
+# A generic stateless service
+ng g s services/helper
+
+# A generic stateful service
+ng g s services/data
+# with model interfaces
+ng g i models/agency --type=interface
+
+# An specific service
+ng g s agencies/agencies-new
+
+```

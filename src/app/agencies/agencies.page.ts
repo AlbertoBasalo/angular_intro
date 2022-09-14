@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { data } from "../data.repository";
+import { DataService } from "../services/data.service";
 @Component({
   selector: "app-agencies",
   template: `
@@ -16,9 +16,9 @@ import { data } from "../data.repository";
   styles: [],
 })
 export class AgenciesPage {
-  agencies = data.agencies;
+  agencies = this.data.getAgencies();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private data: DataService) {}
 
   onNewClick = () => this.router.navigate(["agencies", "new"]);
 }

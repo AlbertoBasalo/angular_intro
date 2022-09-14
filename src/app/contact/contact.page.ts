@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
+import { HelperService } from "../services/helper.service";
 
 @Component({
   selector: "app-contact",
@@ -67,7 +68,10 @@ export class ContactPage {
     ]),
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private helper: HelperService
+  ) {}
 
   isInvalid(controlName: string): boolean {
     const control = this.getControl(controlName);
@@ -88,14 +92,8 @@ export class ContactPage {
   mustShowError = (controlName: string) =>
     this.isTouched(controlName) && this.isInvalid(controlName);
 
-  getErrorMessage(controlName: string) {
-    const control = this.formGroup.get(controlName);
-    if (control && control.errors) {
-      return JSON.stringify(control.errors);
-    }
-    return "";
-  }
-
+  getErrorMessage = (controlName: string) =>
+    this.helper.getErrorMessage(this.formGroup, controlName);
   onSendClick = () => console.warn("Sending ", this.formGroup.value);
   getControl = (controlName: string) => this.formGroup.get(controlName);
 }
