@@ -57,4 +57,4 @@
 - [x] Create a data service
 - [x] Create a model interface for agencies
 - [x] Use service on agencies and view agency component
-- [ ] Create a service for the agencies new use case
+- [x] Create a service for the agencies new use case
