@@ -1,10 +1,5 @@
 import { Component } from "@angular/core";
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from "@angular/forms";
+import { FormBuilder, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-contact",
@@ -22,7 +17,7 @@ import {
           [attr.aria-invalid]="isInvalid('name')"
         />
         <small *ngIf="mustShowError('name')">
-          {{ getControl("name").errors | json }}
+          {{ getErrorMessage("name") }}
         </small>
       </div>
       <div>
@@ -36,7 +31,7 @@ import {
           [attr.aria-invalid]="isInvalid('email')"
         />
         <small *ngIf="mustShowError('email')">
-          {{ getControl("email").errors | json }}
+          {{ getErrorMessage("email") }}
         </small>
       </div>
       <div>
@@ -49,7 +44,7 @@ import {
           [attr.aria-invalid]="isInvalid('message')"
         ></textarea>
         <small *ngIf="mustShowError('message')">
-          {{ getControl("message").errors | json }}
+          {{ getErrorMessage("message") }}
         </small>
       </div>
       <button (click)="onSendClick()" [disabled]="formGroup.invalid">
@@ -60,21 +55,19 @@ import {
   styles: [],
 })
 export class ContactPage {
-  formGroup: FormGroup;
+  formGroup = this.formBuilder.group({
+    name: new FormControl("", [Validators.required]),
+    email: new FormControl("", [
+      Validators.required,
+      Validators.email,
+      Validators.minLength(5),
+    ]),
+    message: new FormControl("Contact with me, please.", [
+      Validators.maxLength(10),
+    ]),
+  });
 
-  constructor(formBuilder: FormBuilder) {
-    this.formGroup = formBuilder.group({
-      name: new FormControl("", [Validators.required]),
-      email: new FormControl("", [
-        Validators.required,
-        Validators.email,
-        Validators.minLength(5),
-      ]),
-      message: new FormControl("Contact with me, please.", [
-        Validators.maxLength(10),
-      ]),
-    });
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   isInvalid(controlName: string): boolean {
     const control = this.getControl(controlName);
@@ -95,7 +88,14 @@ export class ContactPage {
   mustShowError = (controlName: string) =>
     this.isTouched(controlName) && this.isInvalid(controlName);
 
-  getControl = (controlName: string) => this.formGroup.controls[controlName];
+  getErrorMessage(controlName: string) {
+    const control = this.formGroup.get(controlName);
+    if (control && control.errors) {
+      return JSON.stringify(control.errors);
+    }
+    return "";
+  }
 
   onSendClick = () => console.warn("Sending ", this.formGroup.value);
+  getControl = (controlName: string) => this.formGroup.get(controlName);
 }
