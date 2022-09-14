@@ -93,6 +93,6 @@ ng g s services/data
 ng g i models/agency --type=interface
 
 # An specific service
-ng g s agencies/agencies-new
+ng g s agencies/agencies-new/agencies-new
 
 ```

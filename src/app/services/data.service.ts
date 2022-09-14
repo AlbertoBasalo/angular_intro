@@ -14,6 +14,10 @@ export class DataService {
     return data.agencies.find((a) => a.id === agencyId);
   }
 
+  postAgency(agency: Agency) {
+    data.agencies.push(agency);
+  }
+
   getTrips() {
     return data.trips;
   }

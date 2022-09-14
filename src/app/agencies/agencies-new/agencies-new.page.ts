@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
+import { Agency } from "src/app/models/agency.interface";
+import { AgenciesNewService } from "./agencies-new.service";
 
 @Component({
   selector: "app-agencies-new",
@@ -12,4 +15,19 @@ import { Component } from "@angular/core";
   `,
   styles: [],
 })
-export class AgenciesNewPage {}
+export class AgenciesNewPage {
+  formGroup = this.formBuilder.nonNullable.group({
+    name: "",
+    range: "Orbital",
+    status: "Pending",
+  });
+  constructor(
+    private formBuilder: FormBuilder,
+    private agenciesNew: AgenciesNewService
+  ) {}
+
+  onSave() {
+    const formValue: Omit<Agency, "id"> = this.formGroup.getRawValue();
+    this.agenciesNew.saveAgency(formValue);
+  }
+}
