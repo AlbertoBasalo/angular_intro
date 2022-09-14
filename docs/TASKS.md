@@ -38,8 +38,8 @@
 - [x] Route for home page (/) bind to HomeComponent
 - [x] Route for an about page (`/about`) to AboutModule
 - [x] Route for an contact page (`/contact`) bind lazy to ContactModule
+- [x] Route for an agencies page (`/agencies`) bind lazy to AgenciesModule
 - [x] Route for a register page (`auth/register`) bind lazy to RegisterModule
 - [x] Route for a login page (`auth/login`) bind lazy to LoginModule
-- [x] Route for an agencies page (`/agencies`) bind lazy to AgenciesModule
 - [x] Route for a page to create a new agency (`/agencies/new`) bind lazy to AgencyModule
 - [x] Route for a parametric agency page (`/agencies/:id`) bind lazy to AgencyModule

@@ -64,12 +64,17 @@ ng g m about
 # Generate a new component
 ng g c about/about --type=page
 
-# Generate a new route
-ng g m contact --route=contact --module=app
-# even with sub folders or nested routes
+# Same, but with manual lazy loading
+ng g m contact
+ng g c contact/contact --type=page
+
+# 🧙🏼‍♂️ Same but auto generated a new route
+ng g m agencies --route=agencies --module=app
+# even with sub folders
 ng g m auth/register --route=auth/register --module=app
 ng g m auth/login --route=auth/login --module=app
-
-ng g m agencies --route=agencies --module=app
+# or deep routes
 ng g m agencies/agenciesNew --route=new --module=agencies
+# and parametric routes
+ng g m agencies/agencies-view --route=:id --module=agencies
 ```
