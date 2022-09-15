@@ -97,3 +97,14 @@ ng g i models/agency --type=interface
 ng g s agencies/agencies-new/agencies-new
 
 ```
+
+## 6. Http
+
+```bash
+npm i -D json-server json-server-auth
+
+npm i
+
+npm run api
+
+```
