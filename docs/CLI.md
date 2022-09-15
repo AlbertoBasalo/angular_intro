@@ -91,6 +91,7 @@ ng g s services/helper
 ng g s services/data
 # with model interfaces
 ng g i models/agency --type=interface
+# 🧙🏼‍♂️ set this argument on angular.json to have file names for interfaces
 
 # An specific service
 ng g s agencies/agencies-new/agencies-new

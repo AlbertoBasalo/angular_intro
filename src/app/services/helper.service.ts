@@ -17,4 +17,8 @@ export class HelperService {
     }
     return "";
   }
+
+  createId(name: string = ""): string {
+    return name.toLowerCase().replace(" ", "-");
+  }
 }
