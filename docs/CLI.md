@@ -74,7 +74,7 @@ ng g m agencies --route=agencies --module=app
 ng g m auth/register --route=auth/register --module=app
 ng g m auth/login --route=auth/login --module=app
 # or deep routes
-ng g m agencies/agenciesNew --route=new --module=agencies
+ng g m agencies/agencies-new --route=new --module=agencies
 # and parametric routes
 ng g m agencies/agencies-view --route=:id --module=agencies
 ```
@@ -113,4 +113,6 @@ ng g s services/api
 ```bash
 # a specialized component to show list data
 ng g c agencies/agencies --type=list
+
+ng g c agencies/agencies-new/agencies-new  --type=form
 ```

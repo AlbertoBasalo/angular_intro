@@ -68,4 +68,4 @@
 
 - [x] Send synchronous data to components
 - [x] Send asynchronous data
-- [ ] Send events from components
+- [x] Send events from components
