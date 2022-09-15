@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Agency } from "src/app/models/agency.interface";
-import { DataService } from "src/app/services/data.service";
+import { ApiService } from "src/app/services/api.service";
 import { HelperService } from "src/app/services/helper.service";
 
 @Component({
@@ -21,11 +21,14 @@ export class AgenciesViewPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private helper: HelperService,
-    private data: DataService
+    private api: ApiService
   ) {}
 
   ngOnInit(): void {
     this.agencyId = this.helper.getIdFromRoute(this.route);
-    this.agency = this.data.getAgencyById(this.agencyId);
+    // this.agency = this.data.getAgencyById(this.agencyId);
+    this.api.getAgencyById$(this.agencyId).subscribe({
+      next: (body) => (this.agency = body),
+    });
   }
 }

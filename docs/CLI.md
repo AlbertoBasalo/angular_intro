@@ -96,3 +96,14 @@ ng g i models/agency --type=interface
 ng g s agencies/agencies-new/agencies-new
 
 ```
+
+## 6. Http
+
+```bash
+# install a development server with a fake api
+npm i -D json-server json-server-auth
+npm run api
+
+# a service to talk with the api
+ng g s services/api
+```

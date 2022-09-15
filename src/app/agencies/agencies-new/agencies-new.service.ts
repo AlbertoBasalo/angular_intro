@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
 import { Agency } from "src/app/models/agency.interface";
-import { DataService } from "src/app/services/data.service";
+import { ApiService } from "src/app/services/api.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class AgenciesNewService {
-  constructor(private data: DataService) {}
+  constructor(private api: ApiService) {}
 
   saveAgency(formValue: Omit<Agency, "id">) {
     const id = this.createAgencyId(formValue.name);
     const agency = { id, ...formValue };
-    this.data.postAgency(agency);
+    return this.api.postAgency$(agency);
   }
 
   createAgencyId(name: string = ""): string {

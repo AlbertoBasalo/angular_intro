@@ -28,6 +28,8 @@ export class AgenciesNewPage {
 
   onSave() {
     const formValue: Omit<Agency, "id"> = this.formGroup.getRawValue();
-    this.agenciesNew.saveAgency(formValue);
+    this.agenciesNew.saveAgency(formValue).subscribe({
+      next: (body) => console.log("Agency posted: ", body),
+    });
   }
 }

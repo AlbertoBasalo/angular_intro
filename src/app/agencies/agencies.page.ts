@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { DataService } from "../services/data.service";
+import { Agency } from "../models/agency.interface";
+import { ApiService } from "../services/api.service";
 @Component({
   selector: "app-agencies",
   template: `
@@ -16,9 +17,12 @@ import { DataService } from "../services/data.service";
   styles: [],
 })
 export class AgenciesPage {
-  agencies = this.data.getAgencies();
+  // agencies = this.data.getAgencies();
+  agencies: Agency[] = [];
 
-  constructor(private router: Router, private data: DataService) {}
+  constructor(private router: Router, private api: ApiService) {
+    api.getAgencies$().subscribe({ next: (body) => (this.agencies = body) });
+  }
 
   onNewClick = () => this.router.navigate(["agencies", "new"]);
 }
