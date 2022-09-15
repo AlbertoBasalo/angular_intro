@@ -58,3 +58,8 @@
 - [x] Create a model interface for agencies
 - [x] Use service on agencies and view agency component
 - [x] Create a service for the agencies new use case
+
+## 6. Http
+
+- [x] Use an API server
+- [x] Implement CRUD operations against agencies
