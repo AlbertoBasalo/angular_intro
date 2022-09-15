@@ -63,3 +63,9 @@
 
 - [x] Use an API server
 - [x] Implement CRUD operations against agencies
+
+## 7. Flow
+
+- [x] Send synchronous data to components
+- [x] Send asynchronous data
+- [ ] Send events from components

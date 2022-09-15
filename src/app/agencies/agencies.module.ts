@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AgenciesRoutingModule } from './agencies-routing.module';
 import { AgenciesPage } from './agencies.page';
+import { AgenciesList } from './agencies.list';
 
 
 @NgModule({
   declarations: [
-    AgenciesPage
+    AgenciesPage,
+    AgenciesList
   ],
   imports: [
     CommonModule,

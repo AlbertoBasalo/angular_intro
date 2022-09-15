@@ -107,3 +107,10 @@ npm run api
 # a service to talk with the api
 ng g s services/api
 ```
+
+## 7. Flow
+
+```bash
+# a specialized component to show list data
+ng g c agencies/agencies --type=list
+```

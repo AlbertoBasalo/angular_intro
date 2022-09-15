@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "app-footer",
+  styles: [],
   template: `
     <footer>
       <nav>
@@ -17,10 +18,9 @@ import { Component } from "@angular/core";
       </nav>
     </footer>
   `,
-  styles: [],
 })
 export class FooterComponent {
-  title = "Astro Bookings";
+  @Input() title = "";
   subtitle = "Welcome on board";
   subtitleStyle = "font-style: italic";
   author = "Alberto Basalo";
