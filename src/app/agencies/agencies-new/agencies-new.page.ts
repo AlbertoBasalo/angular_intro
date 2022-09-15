@@ -7,10 +7,38 @@ import { AgenciesNewService } from "./agencies-new.service";
   selector: "app-agencies-new",
   template: `
     <h2>➕ Create a new agency record</h2>
-    <form>
-      <input type="text" placeholder="name" />
-      <input type="text" placeholder="range" />
-      <input type="text" placeholder="status" />
+    <form [formGroup]="formGroup">
+      <div>
+        <label for="name">Agency name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="name"
+          formControlName="name"
+        />
+      </div>
+      <div>
+        <label for="range">Operation Range</label>
+        <input
+          id="range"
+          name="range"
+          type="text"
+          placeholder="range"
+          formControlName="range"
+        />
+      </div>
+      <div>
+        <label for="status">Agency name</label>
+        <input
+          id="status"
+          name="status"
+          type="text"
+          placeholder="status"
+          formControlName="status"
+        />
+      </div>
+      <button (click)="onSave()">➕ Save Agency</button>
     </form>
   `,
   styles: [],
