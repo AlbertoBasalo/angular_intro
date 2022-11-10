@@ -1,5 +1,7 @@
 # Angular Intro
 
+> [Code repository](https://github.com/albertobasalo/angular_intro)
+
 A sample project for an introductory course to Angular
 
 > Developing **Astro Bookings** a web app for a fictitious space travel company.
