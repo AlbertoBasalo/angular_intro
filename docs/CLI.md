@@ -10,7 +10,7 @@ npm i @angular/cli
 ng new angular-intro --minimal=true --routing=true --style=css
 
 # 🧙🏼‍♂️ Alternatively, you can skip global installation by running
-npx @angular/cli new angular-intro --minimal=true --routing=true --style=css
+npx @angular/cli@14.2.2 new angular-intro --minimal=true --routing=true --style=css
 
 # run
 npm start
