@@ -10,7 +10,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --port=4214",
+    "start": "ng serve -o --port=4214 && npm run api",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "api": "json-server-auth ./database/db.json -r ./database/routes.json"
